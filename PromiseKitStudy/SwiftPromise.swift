@@ -11,7 +11,7 @@ import PromiseKit
 class SwiftPromise: NSObject {
 
     @objc func seriesMethod() {
-        _ = request(urlStr: "http://www.baidu.com").then { str in
+        _ = request(urlStr: "http://www.baidu.com").then { str in // 这个`str`的类型来自`Promise`中定的类型
             print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
             return self.request(urlStr: "https://api.apiopen.top/api/getHaoKanVideo?page=0&size=10")
         }.then({ str in
@@ -42,6 +42,7 @@ class SwiftPromise: NSObject {
                 } else if let data = data {
                     let str = String(data: data, encoding: .utf8)!
                     resolver.fulfill(str)
+                    // fulfill传入的参数类型为定义`Promise<T>`时的`T`
                 } else {
                     print("[test] --- error2")
                     resolver.reject(MyError())
