@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		84AD60A92B70793B0093CF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AD60A72B70793B0093CF9D /* Main.storyboard */; };
 		84AD60AB2B70793D0093CF9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AD60AA2B70793D0093CF9D /* Assets.xcassets */; };
 		84AD60AE2B70793D0093CF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AD60AC2B70793D0093CF9D /* LaunchScreen.storyboard */; };
+		84AD60BA2B707C2C0093CF9D /* OBJCPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD60B92B707C2C0093CF9D /* OBJCPromise.m */; };
+		84AD60BC2B707C440093CF9D /* SwiftPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD60BB2B707C440093CF9D /* SwiftPromise.swift */; };
+		FE87C430893DB53F4366C303 /* Pods_PromiseKitStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6601F49F20B7A38CEAE54C1 /* Pods_PromiseKitStudy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,13 @@
 		84AD60AA2B70793D0093CF9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84AD60AD2B70793D0093CF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84AD60AF2B70793D0093CF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84AD60B72B707C2B0093CF9D /* PromiseKitStudy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PromiseKitStudy-Bridging-Header.h"; sourceTree = "<group>"; };
+		84AD60B82B707C2C0093CF9D /* OBJCPromise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJCPromise.h; sourceTree = "<group>"; };
+		84AD60B92B707C2C0093CF9D /* OBJCPromise.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBJCPromise.m; sourceTree = "<group>"; };
+		84AD60BB2B707C440093CF9D /* SwiftPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPromise.swift; sourceTree = "<group>"; };
+		991B4224C19C43644EDCC87C /* Pods-PromiseKitStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromiseKitStudy.debug.xcconfig"; path = "Target Support Files/Pods-PromiseKitStudy/Pods-PromiseKitStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		A6601F49F20B7A38CEAE54C1 /* Pods_PromiseKitStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PromiseKitStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5110FB27A57B9D0084E37B8 /* Pods-PromiseKitStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromiseKitStudy.release.xcconfig"; path = "Target Support Files/Pods-PromiseKitStudy/Pods-PromiseKitStudy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE87C430893DB53F4366C303 /* Pods_PromiseKitStudy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				84AD60A02B70793B0093CF9D /* PromiseKitStudy */,
 				84AD609F2B70793B0093CF9D /* Products */,
+				A2B76F7B2FAE066B26702DA2 /* Pods */,
+				D738821BDD325102E6B8DDF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +76,29 @@
 				84AD60AA2B70793D0093CF9D /* Assets.xcassets */,
 				84AD60AC2B70793D0093CF9D /* LaunchScreen.storyboard */,
 				84AD60AF2B70793D0093CF9D /* Info.plist */,
+				84AD60BB2B707C440093CF9D /* SwiftPromise.swift */,
+				84AD60B82B707C2C0093CF9D /* OBJCPromise.h */,
+				84AD60B92B707C2C0093CF9D /* OBJCPromise.m */,
+				84AD60B72B707C2B0093CF9D /* PromiseKitStudy-Bridging-Header.h */,
 			);
 			path = PromiseKitStudy;
+			sourceTree = "<group>";
+		};
+		A2B76F7B2FAE066B26702DA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				991B4224C19C43644EDCC87C /* Pods-PromiseKitStudy.debug.xcconfig */,
+				C5110FB27A57B9D0084E37B8 /* Pods-PromiseKitStudy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D738821BDD325102E6B8DDF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6601F49F20B7A38CEAE54C1 /* Pods_PromiseKitStudy.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84AD60B22B70793D0093CF9D /* Build configuration list for PBXNativeTarget "PromiseKitStudy" */;
 			buildPhases = (
+				3D9BE23B22AE47E947C5CF30 /* [CP] Check Pods Manifest.lock */,
 				84AD609A2B70793B0093CF9D /* Sources */,
 				84AD609B2B70793B0093CF9D /* Frameworks */,
 				84AD609C2B70793B0093CF9D /* Resources */,
+				46B5A092C4F9AAEDA233632A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -99,11 +135,12 @@
 				TargetAttributes = {
 					84AD609D2B70793B0093CF9D = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
 			buildConfigurationList = 84AD60992B70793B0093CF9D /* Build configuration list for PBXProject "PromiseKitStudy" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -133,14 +170,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D9BE23B22AE47E947C5CF30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PromiseKitStudy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46B5A092C4F9AAEDA233632A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PromiseKitStudy/Pods-PromiseKitStudy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PromiseKitStudy/Pods-PromiseKitStudy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PromiseKitStudy/Pods-PromiseKitStudy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84AD609A2B70793B0093CF9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				84AD60A62B70793B0093CF9D /* ViewController.swift in Sources */,
+				84AD60BA2B707C2C0093CF9D /* OBJCPromise.m in Sources */,
 				84AD60A22B70793B0093CF9D /* AppDelegate.swift in Sources */,
 				84AD60A42B70793B0093CF9D /* SceneDelegate.swift in Sources */,
+				84AD60BC2B707C440093CF9D /* SwiftPromise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -287,12 +368,15 @@
 		};
 		84AD60B32B70793D0093CF9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 991B4224C19C43644EDCC87C /* Pods-PromiseKitStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XP3H66JF79;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromiseKitStudy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -300,6 +384,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +393,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aputure.cn.PromiseKitStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PromiseKitStudy/PromiseKitStudy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -315,12 +402,15 @@
 		};
 		84AD60B42B70793D0093CF9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5110FB27A57B9D0084E37B8 /* Pods-PromiseKitStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XP3H66JF79;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PromiseKitStudy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -328,6 +418,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,6 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aputure.cn.PromiseKitStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PromiseKitStudy/PromiseKitStudy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

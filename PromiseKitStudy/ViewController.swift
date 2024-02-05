@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        let swiftPromise = SwiftPromise()
+//        swiftPromise.seriesMethod()
+        
+        let objcPromise = OBJCPromise()
+        objcPromise.seriesMethod()
     }
 
 
