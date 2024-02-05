@@ -17,6 +17,7 @@
 		84AD60BC2B707C440093CF9D /* SwiftPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD60BB2B707C440093CF9D /* SwiftPromise.swift */; };
 		84AD60C52B70CE810093CF9D /* Result接口分析.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD60C32B70CE810093CF9D /* Result接口分析.png */; };
 		84AD60C62B70CE810093CF9D /* Resolver接口分析.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD60C42B70CE810093CF9D /* Resolver接口分析.png */; };
+		84AD60C82B70D5300093CF9D /* Resolver构建分析.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD60C72B70D5300093CF9D /* Resolver构建分析.png */; };
 		FE87C430893DB53F4366C303 /* Pods_PromiseKitStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6601F49F20B7A38CEAE54C1 /* Pods_PromiseKitStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		84AD60BB2B707C440093CF9D /* SwiftPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPromise.swift; sourceTree = "<group>"; };
 		84AD60C32B70CE810093CF9D /* Result接口分析.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Result接口分析.png"; sourceTree = "<group>"; };
 		84AD60C42B70CE810093CF9D /* Resolver接口分析.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resolver接口分析.png"; sourceTree = "<group>"; };
+		84AD60C72B70D5300093CF9D /* Resolver构建分析.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resolver构建分析.png"; sourceTree = "<group>"; };
 		991B4224C19C43644EDCC87C /* Pods-PromiseKitStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromiseKitStudy.debug.xcconfig"; path = "Target Support Files/Pods-PromiseKitStudy/Pods-PromiseKitStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		A6601F49F20B7A38CEAE54C1 /* Pods_PromiseKitStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PromiseKitStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5110FB27A57B9D0084E37B8 /* Pods-PromiseKitStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PromiseKitStudy.release.xcconfig"; path = "Target Support Files/Pods-PromiseKitStudy/Pods-PromiseKitStudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				84AD60C42B70CE810093CF9D /* Resolver接口分析.png */,
 				84AD60C32B70CE810093CF9D /* Result接口分析.png */,
+				84AD60C72B70D5300093CF9D /* Resolver构建分析.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				84AD60C62B70CE810093CF9D /* Resolver接口分析.png in Resources */,
 				84AD60C52B70CE810093CF9D /* Result接口分析.png in Resources */,
 				84AD60A92B70793B0093CF9D /* Main.storyboard in Resources */,
+				84AD60C82B70D5300093CF9D /* Resolver构建分析.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

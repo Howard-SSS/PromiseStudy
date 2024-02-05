@@ -28,23 +28,26 @@ class SwiftPromise: NSObject {
     }
     
     func request(urlStr: String) -> Promise<String> {
+        // Promise<T>的范型与resolver<T>一直
         .init { resolver in
+            /*
+             resolver方法:
+             1.fulfill/reject,两者都是间接构造Result枚举值,fulfill构建fulfilled枚举值,reject构建rejected枚举值
+             2.resolve直接传入Result枚举值
+             如果Result结果是fulfilled,则会继续执行下一个then,如果Result结果是rejected,则会跳过then直接执行catch
+             */
             guard let url = URL(string: urlStr) else {
-                print("[test] --- url:\(urlStr)")
                 resolver.reject(MyError())
                 return;
             }
             let urlRequest = URLRequest(url: url)
             let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 if let error = error {
-                    print("[test] --- error\(error)")
                     resolver.reject(error)
                 } else if let data = data {
                     let str = String(data: data, encoding: .utf8)!
                     resolver.fulfill(str)
-                    // fulfill传入的参数类型为定义`Promise<T>`时的`T`
                 } else {
-                    print("[test] --- error2")
                     resolver.reject(MyError())
                 }
             }
