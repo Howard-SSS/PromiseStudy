@@ -10,7 +10,7 @@
 
 @implementation OBJCPromise
 
-- (void)seriesMethod {
+- (void)seriesMethod1 {
     [self requestWithUrlStr:@"http://www.baidu.com"].then(^(NSString *str) { // 这个`str`的类型来自`Promise`中定的类型
         NSLog(@"[%@] --- content:%@", NSStringFromClass(OBJCPromise.class), str);
         return [self requestWithUrlStr:@"https://api.apiopen.top/api/getHaoKanVideo?page=0&size=10"];

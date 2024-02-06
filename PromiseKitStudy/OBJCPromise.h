@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OBJCPromise : NSObject
 
-- (void)seriesMethod;
+- (void)seriesMethod1;
 
 @end
 

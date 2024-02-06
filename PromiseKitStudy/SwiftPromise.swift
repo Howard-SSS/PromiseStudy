@@ -10,10 +10,29 @@ import PromiseKit
 
 class SwiftPromise: NSObject {
 
-    @objc func seriesMethod() {
-        _ = request(urlStr: "http://www.baidu.com").then { str in // 这个`str`的类型来自`Promise`中定的类型
+    @objc func seriesMethod1() {
+        _ = request(urlStr: "http://www.baidu.com").then { str in // 这个`str`的类型来自返回`Promise`中定的类型
             print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
             return self.request(urlStr: "https://api.apiopen.top/api/getHaoKanVideo?page=0&size=10")
+        }.then({ str in
+            print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
+            return self.request(urlStr: "https://api.apiopen.top/api/getImages?type=food&page=0&size=10")
+        }).then({ str in
+            print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
+            return self.request(urlStr: "https://api.apiopen.top/api/getMiniVideo?page=0&size=10")
+        }).done({ str in
+            print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
+        }).catch({ error in
+            print("[\(NSStringFromClass(SwiftPromise.self))] --- \(error.localizedDescription)")
+        })
+    }
+    
+    @objc func seriesMethod2() {
+        _ = firstly {
+            request(urlStr: "http://www.baidu.com")
+        }.then { str in
+            print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
+            return self.request(urlStr: "https://api.apiopen.top/api/getImages?type=food&page=0&size=10")
         }.then({ str in
             print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
             return self.request(urlStr: "https://api.apiopen.top/api/getImages?type=food&page=0&size=10")
