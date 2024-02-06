@@ -11,14 +11,15 @@
 @implementation OBJCPromise
 
 - (void)seriesMethod1 {
-    [self requestWithUrlStr:@"http://www.baidu.com"].then(^(NSString *str) { // 这个`str`的类型来自`Promise`中定的类型
-        NSLog(@"[%@] --- content:%@", NSStringFromClass(OBJCPromise.class), str);
-        return [self requestWithUrlStr:@"https://api.apiopen.top/api/getHaoKanVideo?page=0&size=10"];
-    }).then(^(NSString *str) {
+    [self requestWithUrlStr:@"https://api.apiopen.top/api/getHaoKanVideo?page=0&size=10"].then(^(NSString *str) { // 这个`str`的类型来自`Promise`中定的类型
         NSLog(@"[%@] --- content:%@", NSStringFromClass(OBJCPromise.class), str);
         return [self requestWithUrlStr:@"https://api.apiopen.top/api/getImages?type=food&page=0&size=10"];
     }).then(^(NSString *str) {
         NSLog(@"[%@] --- content:%@", NSStringFromClass(OBJCPromise.class), str);
+//        return PMKWhen(@[[self successPromise], [self failPromise]]);
+        return PMKWhen(@[[self successPromise], [self successPromise]]);
+    }).then(^(NSArray *result) {
+        NSLog(@"[%@] --- content:%@", NSStringFromClass(OBJCPromise.class), result);
         return [self requestWithUrlStr:@"https://api.apiopen.top/api/getMiniVideo?page=0&size=10"];
     }).then(^(NSString *str){
         NSLog(@"[%@] --- content:%@", NSStringFromClass(OBJCPromise.class), str);
@@ -43,6 +44,22 @@
             }
         }];
         [task resume];
+    }];
+}
+
+- (AnyPromise *)successPromise {
+    return [AnyPromise promiseWithResolverBlock:^(PMKResolver _Nonnull resolver) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            resolver(@"成功");
+        });
+    }];
+}
+
+- (AnyPromise *)failPromise {
+    return [AnyPromise promiseWithResolverBlock:^(PMKResolver _Nonnull resolver) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            resolver([NSError errorWithDomain:@"" code:0 userInfo:nil]);
+        });
     }];
 }
 

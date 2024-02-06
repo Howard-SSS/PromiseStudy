@@ -11,11 +11,11 @@ import PromiseKit
 class SwiftPromise: NSObject {
 
     @objc func seriesMethod1() {
-        _ = request(urlStr: "http://www.baidu.com").ensure {
+        _ = request(urlStr: "https://api.apiopen.top/api/getHaoKanVideo?page=0&size=10").ensure {
             // 上个闭包执行完执行
         }.then { str in // 这个`str`的类型来自返回`Promise`中定的类型
             print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
-            return self.request(urlStr: "https://api.apiopen.top/api/getHaoKanVideo?page=0&size=10")
+            return self.request(urlStr: "https://api.apiopen.top/api/getImages?type=food&page=0&size=10")
         }.map({ str in
             // 将参数类型转换
             guard let data = str.data(using: .utf8) else {
@@ -26,9 +26,10 @@ class SwiftPromise: NSObject {
             if let str = String(data: data, encoding: .utf8) {
                 print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
             }
-            return self.request(urlStr: "https://api.apiopen.top/api/getImages?type=food&page=0&size=10")
-        }).then({ str in
-            print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
+            // 多个任务异步执行,最后都处理完才返回
+            return when(resolved: self.successPromise(), self.failPromise())
+        }).then({ result in
+            print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(result)")
             return self.request(urlStr: "https://api.apiopen.top/api/getMiniVideo?page=0&size=10")
         }).done({ str in
             // 没有error时执行
@@ -40,7 +41,7 @@ class SwiftPromise: NSObject {
     
     @objc func seriesMethod2() {
         _ = firstly {
-            request(urlStr: "http://www.baidu.com")
+            request(urlStr: "https://api.apiopen.top/api/getImages?type=food&page=0&size=10")
         }.ensure {
             // 上个闭包执行完执行
         }.then { str in
@@ -56,9 +57,10 @@ class SwiftPromise: NSObject {
             if let str = String(data: data, encoding: .utf8) {
                 print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
             }
-            return self.request(urlStr: "https://api.apiopen.top/api/getImages?type=food&page=0&size=10")
-        }).then({ str in
-            print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(str)")
+            // 多个任务异步执行,最后都处理完才返回
+            return when(resolved: self.successPromise(), self.failPromise())
+        }).then({ result in
+            print("[\(NSStringFromClass(SwiftPromise.self))] --- content:\(result)")
             return self.request(urlStr: "https://api.apiopen.top/api/getMiniVideo?page=0&size=10")
         }).done({ str in
             // 没有error时执行
@@ -93,6 +95,22 @@ class SwiftPromise: NSObject {
                 }
             }
             task.resume()
+        }
+    }
+    
+    func successPromise() -> Promise<String> {
+        .init { resolver in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                resolver.fulfill("成功")
+            }
+        }
+    }
+    
+    func failPromise() -> Promise<String> {
+        .init { resolver in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                resolver.reject(MyError())
+            }
         }
     }
     

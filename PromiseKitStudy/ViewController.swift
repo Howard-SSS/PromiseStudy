@@ -12,10 +12,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let swiftPromise = SwiftPromise()
-        swiftPromise.seriesMethod2()
+        swiftPromise.seriesMethod1()
         
 //        let objcPromise = OBJCPromise()
-//        objcPromise.seriesMethod()
+//        objcPromise.seriesMethod1()
         
         
     }
