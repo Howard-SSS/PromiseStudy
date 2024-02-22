@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 //        objcPromise.seriesMethod1()
 
 //        测试代码
+//        测试代码2
         
     }
 
